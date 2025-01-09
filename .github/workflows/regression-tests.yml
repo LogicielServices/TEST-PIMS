@@ -1,4 +1,4 @@
-name: Microservices APIs Regression Automated Tests
+name: PIMS Regression Automated Tests
 
 # This workflow is responsible for run mvn test on self-hosted java machine using tags and env , generates single file allure HTML report and then share the report via email to all stakeholders.
 # Muzammil Hussain
@@ -29,20 +29,18 @@ jobs:
           SMTP_USER: ${{ secrets.SMTP_USER }}
           SMTP_PASSWORD: ${{ secrets.SMTP_PASSWORD }}
           TO_EMAIL: muzammil.hussain@logicielservice.com
-          CC_EMAIL: ali.ladhani@logicielservice.com,fahad.ullah@logicielservice.com,kashaf.ali@logicielservice.com,ajmal.syed@logicielservice.com,fawad.qamar@logicielservice.com
+          CC_EMAIL: javeria.tabassum@logicielservice.com,kehkashan.aslam@logicielservice.com,muhammad.aeraz@logicielservice.com,muhammad.hassam@logicielservice.com
           ATTACHMENT_PATH: allure-report/index.html
         run: |
-          $subject = "Automated APIs Regression Tests Report"  
+          $subject = "Automated PIMS Regression Tests Report"  
           $body = @"  
           Hi Team,  
 
           I hope this message finds you well.  
 
-          Please find attached the Regression Tests report for the ( ${{ inputs.environment }} ) environment.  
+          Please find attached the Regression Tests report for the PIMS.  
 
-          Building Block Name: ${{ inputs.building-block-name }}  
-
-          The report includes the results of the executed tests and provides insights into the current state of our microservices. Please review it at your earliest convenience.  
+          The report includes the results of the executed tests and provides insights into the current state of our PIMS. Please review it at your earliest convenience.  
 
           If you have any questions or need further information, feel free to reach out.  
 
