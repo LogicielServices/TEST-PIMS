@@ -6,6 +6,7 @@ name: PIMS Regression Automated Tests
 on:
   workflow_dispatch:
   repository_dispatch:
+    types: [ "PIMS Regression Automated Tests" ]
 
 jobs:
   build:
