@@ -5,6 +5,7 @@ name: PIMS Regression Automated Tests
 
 on:
   repository_dispatch:
+    types: [ "PIMS Regression Automated Tests" ]
 
 jobs:
   build:
