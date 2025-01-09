@@ -5,7 +5,7 @@ name: PIMS Regression Automated Tests
 
 on:
   repository_dispatch:
-    types: [trigger-workflow]
+    types: [dispatch-event]
 
 jobs:
   build:
