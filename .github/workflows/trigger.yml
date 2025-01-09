@@ -1,0 +1,15 @@
+name: Trigger SB_TEST repo
+
+on:
+  push:
+    branches: [ "demo" ]
+  pull_request:
+    branches: [ "demo" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: TestUI
+        run: |
+          curl -XPOST -u "${{ secrets.USERNAME }}:${{ secrets.PASSWORD }}" -H "Accept: application/vnd.github.everest-preview+json" -H "Content-Type: application/json" https://api.github.com/repos/hunainkapadia/SBTests/dispatches --data '{"event_type": "API & UI Tests"}'
