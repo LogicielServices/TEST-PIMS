@@ -4,7 +4,10 @@ name: PIMS Regression Automated Tests
 # Muzammil Hussain
 
 on:
-  repository_dispatch:
+  workflow_run:
+    workflows: ["Trigger Regression Tests"]
+    types:
+      - completed
 
 jobs:
   build:
